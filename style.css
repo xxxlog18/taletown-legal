@@ -1,0 +1,104 @@
+:root {
+  --bg: #1e1f22;
+  --card: #2b2d31;
+  --text: #dbdee1;
+  --muted: #949ba4;
+  --accent: #5865f2;
+  --border: #3f4147;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans Thai", "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.75;
+}
+
+/* Language switching: body gets class "lang-th" or "lang-en" */
+body.lang-th [lang="en"] { display: none; }
+body.lang-en [lang="th"] { display: none; }
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(30, 31, 34, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.nav {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #fff;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.nav a.link { color: var(--muted); text-decoration: none; }
+.nav a.link:hover, .nav a.link.active { color: #fff; }
+
+.lang-btn {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.lang-btn:hover { filter: brightness(1.1); }
+
+main {
+  max-width: 860px;
+  margin: 32px auto;
+  padding: 32px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+h1 { color: #fff; margin-top: 0; line-height: 1.3; }
+h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.updated { color: var(--muted); font-size: 0.9rem; }
+a { color: #00a8fc; }
+li { margin-bottom: 4px; }
+
+.cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 24px; }
+.card {
+  display: block;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+}
+.card:hover { border-color: var(--accent); }
+.card strong { color: #fff; display: block; font-size: 1.1rem; margin-bottom: 4px; }
+
+footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 0 20px 32px; }
+
+@media (max-width: 600px) {
+  main { margin: 16px 12px; padding: 20px; }
+}
